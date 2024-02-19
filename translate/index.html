@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <link rel="shortcut icon" href="https://static.deepl.com/img/logo/deepl-logo-blue.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="fa/css/all.min.css">
+</head>
+<body>  
+    <main>
+        <div class="translate-container">
+            <div class="top">
+                <div class="form-group">
+                    <div>
+                        <label for="sourceCountry">Verlaten van <span id="sourceTaal"></span></label>
+                        <input list="sourceCountrys" id="sourceCountry" name="sourceCountry" onchange="updateLanguage('sourceCountry', 'sourceTaal')">
+                        <datalist id="sourceCountrys">
+                            <option value="AF-Afrikaans">Afrikaans</option>
+                            <option value="SQ-Albanian">Albanian</option>
+                            <option value="AM-Amharic">Amharic</option>
+                            <option value="AR-Arabic">Arabic (text translation only)</option>
+                            <option value="HY-Armenian">Armenian</option>
+                            <option value="AZ-Azerbaijani">Azerbaijani</option>
+                            <option value="EU-Basque">Basque</option>
+                            <option value="BE-Belarusian">Belarusian</option>
+                            <option value="BN-Bengali">Bengali</option>
+                            <option value="BS-Bosnian">Bosnian</option>
+                            <option value="BG-Bulgarian">Bulgarian</option>
+                            <option value="CA-Catalan">Catalan</option>
+                            <option value="ZH-Chinese Simplified">Chinese Simplified</option>
+                            <option value="ZHTW-Chinese Traditional">Chinese Traditional</option>
+                            <option value="HR-Croatian">Croatian</option>
+                            <option value="CS-Czech">Czech</option>
+                            <option value="DA-Danish">Danish</option>
+                            <option value="NL-Dutch">Dutch</option>
+                            <option value="EN-English">English</option>
+                            <option value="EO-Esperanto">Esperanto</option>
+                            <option value="ET-Estonian">Estonian</option>
+                            <option value="FI-Finnish">Finnish</option>
+                            <option value="FR-French">French</option>
+                            <option value="GL-Galician">Galician</option>
+                            <option value="KA-Georgian">Georgian</option>
+                            <option value="DE-German">German</option>
+                            <option value="EL-Greek">Greek</option>
+                            <option value="HT-Haitian Creole">Haitian Creole</option>
+                            <option value="HE-Hebrew">Hebrew</option>
+                            <option value="HI-Hindi">Hindi</option>
+                            <option value="HU-Hungarian">Hungarian</option>
+                            <option value="IS-Icelandic">Icelandic</option>
+                            <option value="ID-Indonesian">Indonesian</option>
+                            <option value="GA-Irish">Irish</option>
+                            <option value="IT-Italian">Italian</option>
+                            <option value="JA-Japanese">Japanese</option>
+                            <option value="KN-Kannada">Kannada</option>
+                            <option value="KK-Kazakh">Kazakh</option>
+                            <option value="KO-Korean">Korean</option>
+                            <option value="KU-Kurdish">Kurdish</option>
+                            <option value="KG-Kyrgyz">Kyrgyz</option>
+                            <option value="LV-Latvian">Latvian</option>
+                            <option value="LT-Lithuanian">Lithuanian</option>
+                            <option value="LB-Luxembourgish">Luxembourgish</option>
+                            <option value="MK-Macedonian">Macedonian</option>
+                            <option value="MS-Malay">Malay</option>
+                            <option value="ML-Malayalam">Malayalam</option>
+                            <option value="MT-Maltese">Maltese</option>
+                            <option value="MR-Marathi">Marathi</option>
+                            <option value="MN-Mongolian">Mongolian</option>
+                            <option value="NE-Nepali">Nepali</option>
+                            <option value="NO-Norwegian">Norwegian</option>
+                            <option value="PL-Polish">Polish</option>
+                            <option value="PT-Portuguese">Portuguese</option>
+                            <option value="PTBR-Portuguese (Brazil)">Portuguese (Brazil)</option>
+                            <option value="RO-Romanian">Romanian</option>
+                            <option value="RU-Russian">Russian</option>
+                            <option value="SR-Serbian">Serbian</option>
+                            <option value="SK-Slovak">Slovak</option>
+                            <option value="SL-Slovenian">Slovenian</option>
+                            <option value="SO-Somali">Somali</option>
+                            <option value="ES-Spanish">Spanish</option>
+                            <option value="SW-Swahili">Swahili</option>
+                            <option value="SV-Swedish">Swedish</option>
+                            <option value="TA-Tamil">Tamil</option>
+                            <option value="TE-Telugu">Telugu</option>
+                            <option value="TH-Thai">Thai</option>
+                            <option value="TR-Turkish">Turkish</option>
+                            <option value="UK-Ukrainian">Ukrainian</option>
+                            <option value="UR-Urdu">Urdu</option>
+                            <option value="UZ-Uzbek">Uzbek</option>
+                            <option value="VI-Vietnamese">Vietnamese</option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="targetCountry">Verlaten naar <span id="targetTaal"></span></label>
+                        <input list="targetCountrys" id="targetCountry" name="targetCountry" onchange="updateLanguage('targetCountry', 'targetTaal')">
+                        <datalist id="targetCountrys">
+                            <option value="AF-Afrikaans">Afrikaans</option>
+                            <option value="SQ-Albanian">Albanian</option>
+                            <option value="AM-Amharic">Amharic</option>
+                            <option value="AR-Arabic">Arabic (text translation only)</option>
+                            <option value="HY-Armenian">Armenian</option>
+                            <option value="AZ-Azerbaijani">Azerbaijani</option>
+                            <option value="EU-Basque">Basque</option>
+                            <option value="BE-Belarusian">Belarusian</option>
+                            <option value="BN-Bengali">Bengali</option>
+                            <option value="BS-Bosnian">Bosnian</option>
+                            <option value="BG-Bulgarian">Bulgarian</option>
+                            <option value="CA-Catalan">Catalan</option>
+                            <option value="ZH-Chinese Simplified">Chinese Simplified</option>
+                            <option value="ZHTW-Chinese Traditional">Chinese Traditional</option>
+                            <option value="HR-Croatian">Croatian</option>
+                            <option value="CS-Czech">Czech</option>
+                            <option value="DA-Danish">Danish</option>
+                            <option value="NL-Dutch">Dutch</option>
+                            <option value="EN-English">English</option>
+                            <option value="EO-Esperanto">Esperanto</option>
+                            <option value="ET-Estonian">Estonian</option>
+                            <option value="FI-Finnish">Finnish</option>
+                            <option value="FR-French">French</option>
+                            <option value="GL-Galician">Galician</option>
+                            <option value="KA-Georgian">Georgian</option>
+                            <option value="DE-German">German</option>
+                            <option value="EL-Greek">Greek</option>
+                            <option value="HT-Haitian Creole">Haitian Creole</option>
+                            <option value="HE-Hebrew">Hebrew</option>
+                            <option value="HI-Hindi">Hindi</option>
+                            <option value="HU-Hungarian">Hungarian</option>
+                            <option value="IS-Icelandic">Icelandic</option>
+                            <option value="ID-Indonesian">Indonesian</option>
+                            <option value="GA-Irish">Irish</option>
+                            <option value="IT-Italian">Italian</option>
+                            <option value="JA-Japanese">Japanese</option>
+                            <option value="KN-Kannada">Kannada</option>
+                            <option value="KK-Kazakh">Kazakh</option>
+                            <option value="KO-Korean">Korean</option>
+                            <option value="KU-Kurdish">Kurdish</option>
+                            <option value="KG-Kyrgyz">Kyrgyz</option>
+                            <option value="LV-Latvian">Latvian</option>
+                            <option value="LT-Lithuanian">Lithuanian</option>
+                            <option value="LB-Luxembourgish">Luxembourgish</option>
+                            <option value="MK-Macedonian">Macedonian</option>
+                            <option value="MS-Malay">Malay</option>
+                            <option value="ML-Malayalam">Malayalam</option>
+                            <option value="MT-Maltese">Maltese</option>
+                            <option value="MR-Marathi">Marathi</option>
+                            <option value="MN-Mongolian">Mongolian</option>
+                            <option value="NE-Nepali">Nepali</option>
+                            <option value="NO-Norwegian">Norwegian</option>
+                            <option value="PL-Polish">Polish</option>
+                            <option value="PT-Portuguese">Portuguese</option>
+                            <option value="PTBR-Portuguese (Brazil)">Portuguese (Brazil)</option>
+                            <option value="RO-Romanian">Romanian</option>
+                            <option value="RU-Russian">Russian</option>
+                            <option value="SR-Serbian">Serbian</option>
+                            <option value="SK-Slovak">Slovak</option>
+                            <option value="SL-Slovenian">Slovenian</option>
+                            <option value="SO-Somali">Somali</option>
+                            <option value="ES-Spanish">Spanish</option>
+                            <option value="SW-Swahili">Swahili</option>
+                            <option value="SV-Swedish">Swedish</option>
+                            <option value="TA-Tamil">Tamil</option>
+                            <option value="TE-Telugu">Telugu</option>
+                            <option value="TH-Thai">Thai</option>
+                            <option value="TR-Turkish">Turkish</option>
+                            <option value="UK-Ukrainian">Ukrainian</option>
+                            <option value="UR-Urdu">Urdu</option>
+                            <option value="UZ-Uzbek">Uzbek</option>
+                            <option value="VI-Vietnamese">Vietnamese</option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="stuur">Vertaal</button>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="form-group">
+                    <span class="copyToClipboard" onclick="copyText('translate')"><i class="far fa-copy"></i></span>
+                    <textarea name="translate" id="translate" cols="50" rows="12" placeholder="Voer tekst in om te vertalen"></textarea>
+                </div>
+                <div class="form-group">
+                    <span class="copyToClipboard" onclick="copyText('translated')"><i class="far fa-copy"></i></span>
+                    <textarea name="translated" id="translated" cols="50" rows="12" placeholder="Vertaalde tekst" disabled></textarea>
+                </div>
+            </div>           
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./js/translate.js"></script>
+</body>
+</html>
